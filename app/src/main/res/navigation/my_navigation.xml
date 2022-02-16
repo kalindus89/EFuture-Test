@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/fragmentScenarios">
+
+    <fragment
+        android:id="@+id/fragmentScenarios"
+        android:name="com.kotlin.kalinduexpertsystem.views.fragment_one.FragmentScenarios"
+        android:label="fragment_scenarios"
+        tools:layout="@layout/fragment_scenarios" >
+        <action
+            android:id="@+id/action_fragmentScenarios_to_fragment_Cases"
+            app:destination="@id/fragment_Cases" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_Cases"
+        android:name="com.kotlin.kalinduexpertsystem.views.fragment_second.Fragment_Cases"
+        android:label="fragment__cases"
+        tools:layout="@layout/fragment__cases" >
+        <argument
+            android:name="caseid"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_fragment_Cases_to_fragmentScenarios"
+            app:destination="@id/fragmentScenarios" />
+    </fragment>
+</navigation>

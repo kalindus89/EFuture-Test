@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="modelScenariosResponse"
+            type="com.kotlin.kalinduexpertsystem.models.ModelScenariosResponse" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:background="@drawable/layout_background"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/caseId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Case ` +String.valueOf(modelScenariosResponse.caseid)}"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:textSize="18dp"
+                tools:text="CaseId" />
+
+            <TextView
+                android:id="@+id/scenario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:text="@{modelScenariosResponse.text}"
+                tools:text="Scenario" />
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/selectCase"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/background_button"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Select"
+            android:textStyle="bold"
+            android:textColor="#09AA36"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+
+</layout>
